@@ -1,16 +1,23 @@
-<ion-view view-title="Trivia">
+<ion-view view-title="Trivia" class="center">
   <ion-content>
-    <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-        <img ng-src="{{chat.face}}">
-        <h2>{{chat.name}}</h2>
-        <p>{{chat.lastText}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
 
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
-          Delete
-        </ion-option-button>
-      </ion-item>
-    </ion-list>
+<center>
+    <button class="button button-positive" ng-click="getPregunta()">
+      Comenzar
+    </button>
+</center>
+
+<div ng-show = "IsVisible">
+<button class="button button-block button-balanced">
+  Opcion 1
+</button>
+<button class="button button-block button-balanced">
+  Opcion 2
+</button>
+<button class="button button-block button-balanced">
+  Opcion 3
+</button>
+</div>
+
   </ion-content>
 </ion-view>
