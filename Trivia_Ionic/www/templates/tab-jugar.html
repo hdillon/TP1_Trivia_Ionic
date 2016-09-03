@@ -1,20 +1,30 @@
 <ion-view view-title="Trivia" class="center">
   <ion-content>
 
-<center>
+<center ng-show="showComenzar">
     <button class="button button-positive" ng-click="getPregunta()">
-      Comenzar
+      Comenzar a jugar!
     </button>
 </center>
 
-<div ng-show = "IsVisible">
-<button class="button button-block button-balanced">
+<div ng-show = "showPregunta">
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+
+<button class="button button-block button-positive">
   Opcion 1
 </button>
-<button class="button button-block button-balanced">
+<button class="button button-block button-positive">
   Opcion 2
 </button>
-<button class="button button-block button-balanced">
+<button class="button button-block button-positive">
   Opcion 3
 </button>
 </div>

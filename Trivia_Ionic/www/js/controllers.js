@@ -4,12 +4,13 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('JugarCtrl', function($scope, Chats) {
-
+.controller('JugarCtrl', function($scope) {
+  $scope.showComenzar = true;
   
   $scope.getPregunta = function() {
+    $scope.showComenzar = false;
     alert("?¿");
-    $scope.IsVisible = true;
+    $scope.showPregunta = true;
   };
 
 })
