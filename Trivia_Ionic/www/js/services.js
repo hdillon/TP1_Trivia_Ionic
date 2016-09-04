@@ -47,4 +47,9 @@ angular.module('starter.services', [])
       return null;
     }
   };
+})
+
+.factory("Preguntas", function($firebaseArray) {
+  var itemsRef = new Firebase('https://triviaionic.firebaseio.com/');
+  return $firebaseArray(itemsRef);
 });
