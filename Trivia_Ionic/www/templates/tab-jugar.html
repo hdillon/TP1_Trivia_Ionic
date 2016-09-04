@@ -19,13 +19,13 @@
 <br><br>
 <br><br>
 
-<button class="button button-block button-positive" ng-repeat="opcion in opciones" ng-show="opcion.$id =='o1'+preguntas[random].$id" ng-click="setRespuesta(opciones[random].$id, preguntas[random].$id, respuestas[random].$value)">
+<button class="button button-block button-positive" ng-repeat="opcion in opciones" ng-show="opcion.$id =='o1'+preguntas[random].$id" ng-click="setRespuesta(opcion.$id, preguntas[random].$id, respuestas[random].$value)">
   {{opcion.$value}}
 </button>
-<button class="button button-block button-positive" ng-repeat="opcion in opciones" ng-show="opcion.$id =='o2'+preguntas[random].$id" ng-click="setRespuesta(opciones[random].$id, preguntas[random].$id, respuestas[random].$value)">
+<button class="button button-block button-positive" ng-repeat="opcion in opciones" ng-show="opcion.$id =='o2'+preguntas[random].$id" ng-click="setRespuesta(opcion.$id, preguntas[random].$id, respuestas[random].$value)">
   {{opcion.$value}}
 </button>
-<button class="button button-block button-positive" ng-repeat="opcion in opciones" ng-show="opcion.$id =='o3'+preguntas[random].$id" ng-click="setRespuesta(opciones[random].$id, preguntas[random].$id, respuestas[random].$value)">
+<button class="button button-block button-positive" ng-repeat="opcion in opciones" ng-show="opcion.$id =='o3'+preguntas[random].$id" ng-click="setRespuesta(opcion.$id, preguntas[random].$id, respuestas[random].$value)">
   {{opcion.$value}}
 </button>
 </div>

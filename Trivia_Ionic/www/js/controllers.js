@@ -4,22 +4,28 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('JugarCtrl', function($scope, Preguntas, Respuestas, Opciones ) {
+.controller('JugarCtrl', function($scope, $state, $ionicPopup, Preguntas, Respuestas, Opciones ) {
   $scope.showComenzar = true;
-  
+  $scope.preguntas = Preguntas;
+  $scope.respuestas = Respuestas;
+  $scope.opciones = Opciones;
+  $scope.random = Math.round(Math.random() * 2); 
+  console.log($scope.random); 
+
   $scope.getPregunta = function() {
     $scope.showComenzar = false;
     $scope.showPregunta = true;
   };
 
   $scope.setRespuesta = function(idOpcion, idPregunta, Respuesta) {
-    alert(idOpcion+" "+idPregunta+" "+Respuesta)
-  };
-    $scope.preguntas = Preguntas;
-    $scope.respuestas = Respuestas;
-    $scope.opciones = Opciones;
+    if(idOpcion == Respuesta)
+      $scope.showAlert("CORRECTO!");
+    else
+      $scope.showAlert("INCORRECTO!");
+    //recargo la variable random para que se recargue la pregunta
     $scope.random = Math.round(Math.random() * 2); 
-    console.log($scope.random); 
+  };
+    
   /*$scope.addItem = function() {
     var name = prompt("What do you need to buy?");
     if (name) {
@@ -28,6 +34,18 @@ angular.module('starter.controllers', [])
       });
     }
   };*/
+
+  $scope.showAlert = function(resultado) {
+  
+      var alertPopup = $ionicPopup.alert({
+         title: resultado,
+         okText: "SIGUIENTE"
+      });
+
+      alertPopup.then(function(res) {
+         // Custom functionality....
+      });
+   };
 
 
 })
