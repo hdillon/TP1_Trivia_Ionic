@@ -1,10 +1,29 @@
 angular.module('starter.controllers', [])
 
-.controller('LoginCtrl', function($scope) {
+.controller('LoginCtrl', function($scope, $ionicPopup, $state) {
+  $scope.usuario = {};
+  $scope.usuario.nombre = "";
+  $scope.login = function() {
+      if($scope.usuario.nombre == "")
+        $scope.showAlert("POR FAVOR INGRESE SU NOMBRE");
+      else{
+        $scope.showAlert("BIENVENIDO " + $scope.usuario.nombre + "!");
+        $state.go('tab.jugar');
+      }
+        
+    };
 
+    $scope.showAlert = function(resultado) {
+      var alertPopup = $ionicPopup.alert({
+         title: resultado
+      });
+      alertPopup.then(function(res) {
+         // Custom functionality....
+      });
+   };
 })
 
-.controller('JugarCtrl', function($scope, $state, $ionicPopup, Preguntas, Respuestas, Opciones ) {
+.controller('JugarCtrl', function($scope, $ionicPopup, Preguntas, Respuestas, Opciones ) {
   $scope.showComenzar = true;
   $scope.preguntas = Preguntas;
   $scope.respuestas = Respuestas;
@@ -25,15 +44,6 @@ angular.module('starter.controllers', [])
     //recargo la variable random para que se recargue la pregunta
     $scope.random = Math.round(Math.random() * 2); 
   };
-    
-  /*$scope.addItem = function() {
-    var name = prompt("What do you need to buy?");
-    if (name) {
-      $scope.items.$add({
-        "name": name
-      });
-    }
-  };*/
 
   $scope.showAlert = function(resultado) {
   
