@@ -4,7 +4,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('JugarCtrl', function($scope, Preguntas) {
+.controller('JugarCtrl', function($scope, Preguntas, Respuestas, Opciones ) {
   $scope.showComenzar = true;
   
   $scope.getPregunta = function() {
@@ -13,14 +13,19 @@ angular.module('starter.controllers', [])
   };
 
     $scope.preguntas = Preguntas;
-  $scope.addItem = function() {
+    $scope.respuestas = Respuestas;
+    $scope.opciones = Opciones;
+    $scope.pregunta = $scope.preguntas;
+    $scope.random = Math.round(Math.random() * 2); 
+    console.log($scope.random); 
+  /*$scope.addItem = function() {
     var name = prompt("What do you need to buy?");
     if (name) {
       $scope.items.$add({
         "name": name
       });
     }
-  };
+  };*/
 
 
 })
