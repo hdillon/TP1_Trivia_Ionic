@@ -12,10 +12,12 @@ angular.module('starter.controllers', [])
     $scope.showPregunta = true;
   };
 
+  $scope.setRespuesta = function(idOpcion, idPregunta, Respuesta) {
+    alert(idOpcion+" "+idPregunta+" "+Respuesta)
+  };
     $scope.preguntas = Preguntas;
     $scope.respuestas = Respuestas;
     $scope.opciones = Opciones;
-    $scope.pregunta = $scope.preguntas;
     $scope.random = Math.round(Math.random() * 2); 
     console.log($scope.random); 
   /*$scope.addItem = function() {
